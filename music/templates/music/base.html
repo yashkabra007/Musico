@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<link rel="stylesheet" href="{% static 'css/music.css' %}">
+    <title>Musico</title>
+
+<style>
+    {% block style %}
+    {% endblock %}
+</style>
+</head>
+<body>
+
+<div class="backg">
+<ul>
+    <li><a style="font-family:'Marck Script', cursive;font-style: italic; font-size: 18px" href="{% url 'music:index' %}">Musico</a></li>
+    {% block active %}
+        <li><a href="{% url 'music:index' %}" class="active"><i class='fas fa-headphones active' style='font-size:16px'></i> Albums</a></li>
+        <li><a href=""><i class='fas fa-music' style='font-size:16px'></i> Songs</a></li>
+    {% endblock %}
+    {% if user.is_authenticated %}
+        <li style="float:right"><a href="{% url 'logout' %}"><i class='fa fa-sign-out' style='font-size:16px'></i> Logout</a></li>
+        <li style="float:right"><a href="">Hello {{ user.username }}</a></li>
+    {% else %}
+        <li style="float:right"><a href="{% url 'login' %}">Login</a></li>
+        <li style="float:right"><a href="">Signup</a></li>
+    {% endif %}
+</ul>
+
+     {% block content %}
+     {% endblock %}
+</div>
+</body>
+</html>
+
+
+
+

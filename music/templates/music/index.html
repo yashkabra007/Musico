@@ -1,0 +1,32 @@
+{% extends 'music/base.html' %}
+
+{% block style %}
+{% endblock %}
+
+
+{% block content %}
+
+{% if all_albums %}
+
+<div class="flex-container">
+     {% for album in all_albums %}
+      <div class="album">
+      <img src="{{ album.album_logo.url }}" alt="logo" style="width:100%"><br>
+      <a href="{% url 'music:details' album.id %}">{{ album.album_title }}</a>
+      <br>
+      <button href="{% url 'music:details' album.id %}" class="button button2">Details</button>
+      <a class="icon" href=""><i class="fa fa-trash-o" style="font-size:18px"></i></a>
+      <a class="icon" href=""><i class="fa fa-heart-o" style="font-size:18px; color: #999999"></i></a>
+      </div>
+     {% endfor %}
+</div>
+
+{% else %}
+  <h3>don't have any album</h3>
+{% endif %}
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,119 @@
+
+
+* {
+  box-sizing: border-box;
+ }
+     /* upper bar */
+.backg {
+    background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSEhMVFRUVFxcXFxgXFxcXHRcXFxcYFxcXFRcYHSggGBolHRcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAABAAIDB//EACgQAQEBAAECBQQCAwEAAAAAAAABEQIS8CExUWGRQXGBodHhE7HxA//EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD2HpVhhBiwwcjKCnf/AEs5nr8a0CwREBIL3/ZVoCVrqZMBWRWJWAVEIDQqqAYLyajnf/MG1qkNBadGIEQQBg3+hOQH/H7kdVQM2mVQAYbPBQgx0tYjAZwrUAxHFgAEUDq0DQbGC1aDc92akCQhA4RaNBX9FKgdZ3x9kYDN5DjWukdILq9r+v5RyIBBPUqg1q1loFp0IBToQJURAazaRQKVNgM76Ke7UZwFK0FAaUFi8QNZtI9gVMrNjcBWLDgAWoxAzqaz2/SBkytYAZwjPXxqgGFUgzihADEiCjPKGGUGZGlFASMVAKJQEqjaAiwGUFIOVMqsAxDVOAEGnAc99k335EFfFFUGaLCgVSxAKqRQERtGAOoqiQFjUrOkDDRrN5Z9KDWKxbFKChsRBkqgGqEgUKEBrFBivCXzBrp9v9gdMQEWFYAiR0AqkDPmcUQCs2tDlAOCxcYbQSqlGgbBx9/lTl6m0B1zy3xaxz6Ju9/dvQaCQKhqAFhxkygqVYgWjWgDeRAAtGrRoGGxSqALWbe/E4MBcabBxmNUFAIdBKhqAJ9lgvHVx454AFIVYCtUUw4CqEplBVUb8d+QgEwQ0BDAp4AbTxjHU1OQNbEkDK4hQGoKkCxm8u/7ajn0A3p0YaC06MVBJHQVUZ09QDpqvE6QYs/RlXJQFDKz5NAukIgzmK/GNaLQErXUyoBsViVgJLCCCvJaDUZqWglFEBwi1aCqSoFnfFYcBm2ea409AnHAV5fgxKgobFIQY6fv8tYjAZK1AMRxYDKIoGVDBbgN99+KGoGd9FPdqM3iCl9WgYBUFiA1nTo0E1GbGoCsRwaA6lpQMiGoGtWstAtOiIBTagCVHGIDWbSKBSqwAGkBRitAKJQEkbQEWCGUFIK1KOUAxDV0AQarAZ0tYM9gZwxfcQDCkAxQgBYigUZ5EygzI0oYDOfdNIBhwM3nnqBNnodUARWGEAlaANiSBSFIDigxXj+AVRQM0WGoFUiDNRFARYbRgDSrGQaw6zqlBpL5QDlxPHuqUWgdnqelynDx106gaESgINCgsWC1qUBTBYQWiVoYBFNWAJEsWglUgZtOKRAGbWhygHBi4m0ErFBb3334AtK1ADIkCpgiA1CUygqqN8+/QZ38ge+4YIaAlMCgHTxY6m5QNo1KUFDg432IC1m02DAXGnBxjQKATTKCtxWLVAE+xwWLhxwAmiDH1Zvn37pA1w+hn8lAFz8igZ5fQXzqQGeRnmkCnmeRQMwfX81IFHSpAu/0CgZ4mpAqUgYjaQMqef5/hID9CkASQP/Z");
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #b3b3b3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: "Comic Sans MS";
+  font-size: 15px;
+
+}
+
+li i {
+    color:#b3b3b3;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+  text-decoration: none;
+}
+
+.active {
+  color: white;
+  background-color: #000000;
+}
+    /* upper bar */
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: 10px 15px 10px 15px;
+}
+
+.flex-container > div {
+    background-color:white;
+    width: 25%;
+    padding: 3px 3px 3px 3px;
+    margin: 50px 4% 22px 4%;
+    text-align: center;
+    font-size: 27px;
+    border-radius: 3px;
+/*{#    background-clip: content-box;#}*/
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+    }
+
+.album a{
+  padding:2px;
+  color: #4d4d4d ;
+  text-transform: capitalize;
+  font-weight: bold;
+ }
+
+.album a:link {
+  text-decoration: none;
+}
+
+.album a:visited {
+  text-decoration: none;
+}
+
+.album a:hover {
+  text-decoration: none;
+}
+
+img {
+    height:250px;
+    margin-bottom:10px;
+ }
+
+ .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 10px 1px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+ .album .icon {    /*to target class inside class*/
+/*   border: 1px solid blue;*/
+    }
+
+ .album .icon i{
+    border: 2px solid #999999;
+    border-radius: 4px;
+    padding:4px 7px 6px 7px;
+    }
