@@ -6,10 +6,10 @@
 
 {% block content %}
 
-{% if all_albums %}
+{% if albums %}
 
 <div class="flex-container">
-     {% for album in all_albums %}
+     {% for album in albums %}
       <div class="album">
       <img src="{{ album.album_logo.url }}" alt="logo" style="width:100%"><br>
       <a href="{% url 'music:details' album.id %}">{{ album.album_title }}</a>

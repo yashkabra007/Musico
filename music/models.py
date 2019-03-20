@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
 class Album(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='albums', default=1, null=True)
     artist = models.CharField(max_length=250)
     album_title = models.CharField(max_length=500)
     genre = models.CharField(max_length=100)
@@ -24,7 +26,7 @@ class Song(models.Model):
 
 
 class Profile(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     favourite_songs = models.ManyToManyField(Song, related_name='profiles')
     profile_photo = models.FileField()
     bio = models.CharField(max_length=20)

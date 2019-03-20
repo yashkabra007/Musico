@@ -9,6 +9,12 @@ def index(request):
     return render(request, 'music/index.html', {'all_albums': all_albums})
 
 
+def my_albums(request):
+    user = request.user
+    albums = user.albums.all()
+    return render(request, 'music/myalbums.html', {'albums': albums})
+
+
 @login_required
 def details(request, album_id):
     # album = get_object_or_404(Album, pk=album_id)
