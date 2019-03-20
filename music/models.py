@@ -27,9 +27,9 @@ class Song(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    favourite_songs = models.ManyToManyField(Song, related_name='profiles')
-    profile_photo = models.FileField()
-    bio = models.CharField(max_length=20)
+    favourite_songs = models.ManyToManyField(Song, related_name='profiles', blank=True)
+    profile_photo = models.FileField(blank=True)
+    bio = models.CharField(max_length=20, default="")
 
 
 @receiver(post_save, sender=User)

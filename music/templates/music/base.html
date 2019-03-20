@@ -29,7 +29,7 @@
         <li style="float:right"><a href="">Hello {{ user.username }}</a></li>
     {% else %}
         <li style="float:right"><a href="{% url 'login' %}">Login</a></li>
-        <li style="float:right"><a href="">Signup</a></li>
+        <li style="float:right"><a href="{% url 'signup' %}">Signup</a></li>
     {% endif %}
 </ul>
 

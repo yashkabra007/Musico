@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+{% comment %}<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=date]  {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus, input[type=date]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+.signupbtn {
+  width: 50%;
+  margin-left:25%;
+  margin-right:25%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+h1, p {
+  text-align:center;
+}
+
+
+</style>{% endcomment %}
+<body>
+<div class="modal">
+  <form class="modal-content" action="" method="POST">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+        {% csrf_token %}
+        {{ form.as_p }}
+
+     {% comment %} <label for="id_username"><b>Name</b></label>
+      <input type="text" id="id_username" placeholder="Your name" name="username" required>
+
+      <label for="id_email"><b>Email</b></label>
+      <input type="text" id="id_email" placeholder="Your email" name="email" required>
+{% endcomment %}
+{##}
+{#      <label for="gender"><b>Gender</b></label>#}
+{#      <input type="text" placeholder="" name="gender" required>#}
+{##}
+{#      <label for="id_password1"><b>Password</b></label>#}
+{#      <input type="password" id="id_password1" placeholder="password" name="password1" required>#}
+{##}
+{#      <label for="id_password2"><b>Password confirmation</b></label>#}
+{#      <input type="password"  id="id_password2" placeholder="password again" name="password2" required>#}
+{##}
+{#      <label for="id_gender"><b>Gender</b></label>&nbsp;&nbsp;&nbsp;#}
+{#      <input type="radio" id="id_gender" name="gender" value="Male"> Male &nbsp;&nbsp;#}
+{#      <input type="radio" id="id_gender" name="gender" value="Female"> Female &nbsp;&nbsp;#}
+{#      <input type="radio" id="id_gender" name="gender" value="Other"> Other &nbsp;&nbsp; <br><br><br>#}
+{##}
+{#      <label for="id_Birthday"><b>Date of birth</b></label>#}
+{#      <input type="date" id="id_Birthday" placeholder="" name="Birthday">#}
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
+
+
+{% comment %}
+For Signup form styling:-
+https://stackoverflow.com/questions/49346582/how-do-i-style-my-user-registration-form-using-bootstrap-in-django
+{% endcomment %}

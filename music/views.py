@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import Http404
 from .models import Album, Song
 from django.contrib.auth.decorators import login_required
+from .forms import SignUpForm
+from django.contrib.auth import login, authenticate
 
 
 def index(request):
@@ -37,5 +39,24 @@ def favorite(request, album_id):
         selected_song.is_favorite = True
         selected_song.save()
         return render(request, 'music/details.html', {'album': album})
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+            user.profile.bio = form.cleaned_data.get('bio')
+            user.save()
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=raw_password)
+            login(request, user)
+            return redirect('/music/')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/signup.html', {'form': form})
+
+
 
 

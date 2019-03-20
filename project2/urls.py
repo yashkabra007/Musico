@@ -16,15 +16,17 @@ Including another URLconf
 
 from django.contrib import admin
 from django.conf.urls import include, url
-from django.conf import  settings
+from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views
+from music import views as v
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^music/', include('music.urls')),
     url('^accounts/login/', views.LoginView.as_view(), name='login'),
     url('^accounts/logout/', views.LogoutView.as_view(next_page='/music/'), name='logout'),
+    url(r'^signup/$', v.signup, name='signup'),
 ]
 
 if settings.DEBUG:
